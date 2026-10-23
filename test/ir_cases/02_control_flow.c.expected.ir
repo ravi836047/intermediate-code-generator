@@ -1,0 +1,57 @@
+# Three-address intermediate representation
+func main$0:
+var i : int
+i = 0
+var total : int
+total = 0
+while_test_1:
+t1 = i < 6
+if t1 goto while_body_2
+goto while_end_3
+while_body_2:
+t2 = i
+i = i + 1
+t4 = i % 2
+t3 = t4 == 0
+if t3 goto if_true_4
+goto if_false_5
+if_true_4:
+goto while_test_1
+goto if_end_6
+if_false_5:
+if_end_6:
+total = total + i
+goto while_test_1
+while_end_3:
+do_body_7:
+total = total + i
+t5 = i
+i = i - 1
+do_test_8:
+t6 = i > 3
+if t6 goto do_body_7
+goto do_end_9
+do_end_9:
+var j : int
+j = 0
+for_test_10:
+t7 = j < 3
+if t7 goto for_body_11
+goto for_end_13
+for_body_11:
+t8 = j == 2
+if t8 goto if_true_14
+goto if_false_15
+if_true_14:
+goto for_end_13
+goto if_end_16
+if_false_15:
+if_end_16:
+total = total + j
+for_step_12:
+t9 = j
+j = j + 1
+goto for_test_10
+for_end_13:
+return total
+endfunc main$0

@@ -1,0 +1,17 @@
+# Three-address intermediate representation
+type Point
+field x : int
+field y : int
+func main$0:
+var p : struct Point
+p.x = 3
+p.y = 4
+t3 = p.y
+t4 = p.y
+t2 = t4 * t3
+t6 = p.x
+t7 = p.x
+t5 = t7 * t6
+t1 = t5 + t2
+return t1
+endfunc main$0

@@ -1,0 +1,12 @@
+# Three-address intermediate representation
+# type Base
+# type Child
+func main:
+var c : Child
+c.x = 3
+c.y = 4
+t2 = c.y
+t3 = c.x
+t1 = t3 + t2
+return t1
+endfunc main

@@ -1,0 +1,24 @@
+# Three-address intermediate representation
+func main$0:
+var x : int
+x = 10
+var p : int*
+t1 = &x
+p = t1
+var pp : int**
+t2 = &p
+pp = t2
+var ppp : int***
+t3 = &pp
+ppp = t3
+t4 = *pp
+*t4 = 12
+t6 = *ppp
+t5 = *t6
+t10 = *ppp
+t9 = *t10
+t8 = *t9
+t7 = t8 + 1
+*t5 = t7
+return x
+endfunc main$0

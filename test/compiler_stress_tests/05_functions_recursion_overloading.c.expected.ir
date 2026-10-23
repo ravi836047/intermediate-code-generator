@@ -1,0 +1,45 @@
+# Three-address intermediate representation
+func fact$1$int:
+param n : int
+t1 = n <= 1
+if t1 goto if_true_1
+goto if_false_2
+if_true_1:
+return 1
+goto if_end_3
+if_false_2:
+if_end_3:
+t3 = n - 1
+param t3
+t4 = call fact$1$int, 1
+t2 = n * t4
+return t2
+endfunc fact$1$int
+func combine$1$int:
+param x : int
+t5 = x + 1
+return t5
+endfunc combine$1$int
+func combine$2$int$int:
+param x : int
+param y : int
+t6 = x * y
+return t6
+endfunc combine$2$int$int
+func main$0:
+var a : int
+param 5
+t7 = call fact$1$int, 1
+a = t7
+var b : int
+param a
+t8 = call combine$1$int, 1
+b = t8
+var c : int
+param 3
+param 4
+t9 = call combine$2$int$int, 2
+c = t9
+t10 = b + c
+return t10
+endfunc main$0

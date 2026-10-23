@@ -1,0 +1,21 @@
+# Three-address intermediate representation
+global U : unsigned int
+# enum Mode
+global base : int
+base = 3
+func main:
+var x : U
+x = ON
+var a : int
+a[0] = 1
+a[1] = 2
+a[2] = 3
+a[3] = 4
+t4 = a[0]
+t3 = sizeof t4
+t5 = sizeof a
+t2 = t5 / t3
+t6 = x + base
+t1 = t6 + t2
+return t1
+endfunc main

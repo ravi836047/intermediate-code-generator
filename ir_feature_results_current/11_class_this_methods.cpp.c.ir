@@ -1,0 +1,15 @@
+# Three-address intermediate representation
+# type Counter
+func Counter::add:
+param n : int
+this->v = this->v + n
+t1 = this->v
+return t1
+endfunc Counter::add
+func main:
+var c : Counter
+c = <List>
+param 3
+t2 = call c.add, 1
+return t2
+endfunc main

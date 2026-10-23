@@ -1,0 +1,20 @@
+# Three-address intermediate representation
+type Pair
+field left : int
+field right : int
+type Vault
+field visible : int
+field secret : int
+field inherited : int
+func main$0:
+var pair : struct Pair
+var vault : class Vault
+pair.left = 4
+pair.right = 9
+t2 = pair.right
+t3 = pair.left
+t1 = t3 + t2
+vault.visible = t1
+t4 = vault.visible
+return t4
+endfunc main$0

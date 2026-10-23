@@ -1,0 +1,127 @@
+# Three-address intermediate representation
+func main$0:
+var a : int
+a = 6
+var b : int
+b = 2
+var c : int
+c = 0
+t1 = a + b
+c = t1
+t2 = a - b
+c = t2
+t3 = a * b
+c = t3
+t4 = a / b
+c = t4
+t5 = a % b
+c = t5
+t6 = a
+a = a + 1
+c = t6
+t7 = a
+a = a - 1
+c = t7
+a = a + 1
+c = a
+a = a - 1
+c = a
+a = a + b
+a = a - b
+a = a * b
+a = a / b
+a = a % b
+t8 = a == b
+c = t8
+t9 = a != b
+c = t9
+t10 = a < b
+c = t10
+t11 = a > b
+c = t11
+t12 = a <= b
+c = t12
+t13 = a >= b
+c = t13
+if a goto and_rhs_4
+goto logic_false_2
+and_rhs_4:
+if b goto logic_true_1
+goto logic_false_2
+logic_true_1:
+t14 = 1
+goto logic_end_3
+logic_false_2:
+t14 = 0
+logic_end_3:
+c = t14
+if a goto logic_true_5
+goto or_rhs_8
+or_rhs_8:
+if b goto logic_true_5
+goto logic_false_6
+logic_true_5:
+t15 = 1
+goto logic_end_7
+logic_false_6:
+t15 = 0
+logic_end_7:
+c = t15
+t16 = !a
+c = t16
+t17 = a & b
+c = t17
+t18 = a | b
+c = t18
+t19 = a ^ b
+c = t19
+t20 = ~a
+c = t20
+t21 = a << b
+c = t21
+t22 = a >> b
+c = t22
+a = a << b
+a = a >> b
+a = a & b
+a = a | b
+a = a ^ b
+t24 = a
+a = a + 1
+t25 = t24
+t24 = t24 + 1
+t23 = t25 + b
+c = t23
+t27 = a
+a = a - 1
+t26 = t27 - b
+c = t26
+t29 = a
+a = a - 1
+t28 = t29 > b
+c = t28
+t31 = -b
+t30 = a << t31
+c = t30
+t33 = -b
+t32 = a < t33
+c = t32
+if a goto and_rhs_12
+goto logic_false_10
+and_rhs_12:
+t35 = &b
+if t35 goto logic_true_9
+goto logic_false_10
+logic_true_9:
+t34 = 1
+goto logic_end_11
+logic_false_10:
+t34 = 0
+logic_end_11:
+c = t34
+param "%d"
+t36 = &c
+param t36
+t37 = call printf, 2
+return 0
+endfunc main$0

@@ -1,0 +1,15 @@
+# Three-address intermediate representation
+func bump:
+param x : int
+x = x + 4
+return x
+endfunc bump
+func main:
+var v : int
+v = 6
+var r : int
+r = v
+param r
+t1 = call bump, 1
+return v
+endfunc main

@@ -1,0 +1,26 @@
+# Three-address intermediate representation
+func main$0:
+var enabled : bool
+enabled = true
+var quote : char
+quote = '\''
+var slash : char
+slash = '\\'
+var ratio : float
+ratio = 1.5e+2
+var message : char[]
+message = "AST ""and TAC\n"
+if enabled goto if_true_1
+goto if_false_2
+if_true_1:
+param "%c%c %.1f %s"
+param quote
+param slash
+param ratio
+param message
+t1 = call printf, 5
+goto if_end_3
+if_false_2:
+if_end_3:
+return 0
+endfunc main$0

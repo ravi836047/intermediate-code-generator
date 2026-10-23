@@ -1,0 +1,35 @@
+# Three-address intermediate representation
+func main$0:
+var a : int
+a = 5
+var b : int
+b = 3
+var c : int
+c = 0
+t2 = a << 1
+t4 = b * 4
+t3 = a + t4
+t1 = t3 - t2
+c = t1
+t5 = a % b
+c = c + t5
+t7 = c >= 0
+if t7 goto and_rhs_5
+goto or_rhs_4
+and_rhs_5:
+t8 = a != b
+if t8 goto logic_true_1
+goto or_rhs_4
+or_rhs_4:
+t9 = !b
+if t9 goto logic_true_1
+goto logic_false_2
+logic_true_1:
+t6 = 1
+goto logic_end_3
+logic_false_2:
+t6 = 0
+logic_end_3:
+c = t6
+return c
+endfunc main$0

@@ -1,0 +1,37 @@
+# Three-address intermediate representation
+type Count = int
+type Parent
+field inherited : int
+type Child extends Parent
+field own : int
+func Child::total:
+param this : Child*
+t2 = this->own
+t3 = this->inherited
+t1 = t3 + t2
+return t1
+endfunc Child::total
+func main$0:
+var value : Count
+value = 4
+var alias : Count&
+alias alias -> value
+var pointer : Count*
+t4 = &value
+pointer = t4
+var chain : Count**
+t5 = &pointer
+chain = t5
+var bytes : int
+t8 = *pointer
+t7 = sizeof t8
+t10 = sizeof value
+t11 = sizeof int
+t9 = t11 + t10
+t6 = t9 + t7
+bytes = t6
+t14 = *chain
+t13 = *t14
+t12 = t13 + bytes
+return t12
+endfunc main$0

@@ -1,0 +1,26 @@
+# Three-address intermediate representation
+type Box
+field value : int
+func Box::Box:
+param this : Box*
+param v : int
+this->value = v
+return
+endfunc Box::Box
+func Box::get:
+param this : Box*
+t1 = this->value
+return t1
+endfunc Box::get
+field secret : int
+func main$0:
+var b : Box
+param &b
+param 7
+call Box::Box, 2 # construct b
+param &b
+t2 = call Box::get, 1
+b.value = t2
+t3 = b.value
+return t3
+endfunc main$0

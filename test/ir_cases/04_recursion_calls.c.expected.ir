@@ -1,0 +1,27 @@
+# Three-address intermediate representation
+func fibonacci$1$int:
+param n : int
+t1 = n <= 1
+if t1 goto if_true_1
+goto if_false_2
+if_true_1:
+return n
+goto if_end_3
+if_false_2:
+if_end_3:
+t3 = n - 2
+param t3
+t4 = call fibonacci$1$int, 1
+t5 = n - 1
+param t5
+t6 = call fibonacci$1$int, 1
+t2 = t6 + t4
+return t2
+endfunc fibonacci$1$int
+func main$0:
+var answer : int
+param 6
+t7 = call fibonacci$1$int, 1
+answer = t7
+return answer
+endfunc main$0

@@ -1,0 +1,37 @@
+# Three-address intermediate representation
+func blend$1$int:
+param value : int
+t1 = value + 1
+return t1
+endfunc blend$1$int
+func blend$2$int$int:
+param left : int
+param right : int
+t2 = left * right
+return t2
+endfunc blend$2$int$int
+func main$0:
+var value : int
+value = 3
+var level1 : int*
+t3 = &value
+level1 = t3
+var level2 : int**
+t4 = &level1
+level2 = t4
+var level3 : int***
+t5 = &level2
+level3 = t5
+t8 = *level2
+t7 = *t8
+param t7
+param 5
+t9 = call blend$2$int$int, 2
+t12 = *level3
+t11 = *t12
+t10 = *t11
+param t10
+t13 = call blend$1$int, 1
+t6 = t13 + t9
+return t6
+endfunc main$0

@@ -1,0 +1,22 @@
+# Three-address intermediate representation
+func classify$1$int:
+param value : int
+if value == 0 goto case_2
+if value == 1 goto case_3
+if value == 2 goto case_4
+goto case_5
+case_2:
+return 10
+case_3:
+case_4:
+return 20
+case_5:
+t1 = -1
+return t1
+switch_end_1:
+endfunc classify$1$int
+func main$0:
+param 2
+t2 = call classify$1$int, 1
+return t2
+endfunc main$0

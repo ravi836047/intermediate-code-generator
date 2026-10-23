@@ -1,0 +1,23 @@
+# Three-address intermediate representation
+func main:
+var a : int
+a = 9
+var b : int
+b = 4
+var c : int
+t3 = a + b
+t2 = t3 * 2
+t1 = t2 - b
+c = t1
+c = c + 3
+t4 = c > 20
+if t4 goto if_true_1
+goto if_false_2
+if_true_1:
+t5 = c - 1
+c = t5
+goto if_end_3
+if_false_2:
+if_end_3:
+return c
+endfunc main

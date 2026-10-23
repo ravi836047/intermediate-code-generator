@@ -1,0 +1,12 @@
+# Three-address intermediate representation
+func main:
+var p : int
+t1 = new int
+p = t1
+*p = 14
+var r : int
+t2 = *p
+r = t2
+delete p
+return r
+endfunc main

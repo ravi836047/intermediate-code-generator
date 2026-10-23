@@ -1,0 +1,14 @@
+# Three-address intermediate representation
+func main:
+var x : int
+x = 4
+var p : int
+t1 = &x
+p = t1
+var q : int
+t2 = &p
+q = t2
+t3 = *q
+*t3 = 17
+return x
+endfunc main

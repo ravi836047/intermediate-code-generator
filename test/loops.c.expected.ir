@@ -1,0 +1,49 @@
+# Three-address intermediate representation
+func main$0:
+var i : int
+var s : int
+var n : int
+n = 3
+s = 0
+i = 0
+for_test_1:
+t1 = i < n
+if t1 goto for_body_2
+goto for_end_4
+for_body_2:
+s = s + i
+for_step_3:
+t2 = i
+i = i + 1
+goto for_test_1
+for_end_4:
+param "for sum 0..2      = %d\n"
+param s
+t3 = call printf, 2
+i = 0
+s = 0
+while_test_5:
+if 0 goto while_body_6
+goto while_end_7
+while_body_6:
+t4 = s
+s = s + 1
+goto while_test_5
+while_end_7:
+param "while(0) body ran = %d times\n"
+param s
+t5 = call printf, 2
+i = 0
+s = 0
+do_body_8:
+t6 = s
+s = s + 1
+do_test_9:
+if 0 goto do_body_8
+goto do_end_10
+do_end_10:
+param "do-while(0) ran   = %d time\n"
+param s
+t7 = call printf, 2
+return 0
+endfunc main$0

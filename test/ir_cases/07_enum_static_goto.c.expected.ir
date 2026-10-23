@@ -1,0 +1,27 @@
+# Three-address intermediate representation
+# enum State
+const READY = 0
+const RUNNING = 3
+const STOPPED = 4
+func bump$1$int:
+param value : int
+t1 = value + 1
+return t1
+endfunc bump$1$int
+func main$0:
+var count : int
+count = 0
+retry:
+param count
+t2 = call bump$1$int, 1
+count = t2
+t3 = count < STOPPED
+if t3 goto if_true_1
+goto if_false_2
+if_true_1:
+goto retry
+goto if_end_3
+if_false_2:
+if_end_3:
+return count
+endfunc main$0

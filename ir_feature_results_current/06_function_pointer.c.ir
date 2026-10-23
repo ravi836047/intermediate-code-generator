@@ -1,0 +1,15 @@
+# Three-address intermediate representation
+func add:
+param a : int
+param b : int
+t1 = a + b
+return t1
+endfunc add
+func main:
+var f : int
+f = add
+param 13
+param 6
+t2 = call f, 2
+return t2
+endfunc main

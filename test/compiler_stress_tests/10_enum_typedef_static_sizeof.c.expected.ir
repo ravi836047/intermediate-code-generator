@@ -1,0 +1,25 @@
+# Three-address intermediate representation
+type uint = unsigned int
+# enum Color
+const RED = 0
+const GREEN = 4
+const BLUE = 5
+static global counter : int
+counter = 0
+func main$0:
+var x : uint
+x = 12
+var c : enum Color
+c = BLUE
+t1 = sizeof x
+counter = counter + t1
+t2 = c == BLUE
+if t2 goto if_true_1
+goto if_false_2
+if_true_1:
+return counter
+goto if_end_3
+if_false_2:
+if_end_3:
+return 0
+endfunc main$0

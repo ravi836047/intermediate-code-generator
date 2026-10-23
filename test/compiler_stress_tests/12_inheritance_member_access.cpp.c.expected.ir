@@ -1,0 +1,35 @@
+# Three-address intermediate representation
+type Base
+field x : int
+func Base::Base:
+param this : Base*
+param v : int
+this->x = v
+return
+endfunc Base::Base
+type Derived extends Base
+field y : int
+func Derived::Derived:
+param this : Derived*
+param a : int
+param b : int
+this->y = b
+return
+endfunc Derived::Derived
+func Derived::sum:
+param this : Derived*
+t2 = this->y
+t3 = this->x
+t1 = t3 + t2
+return t1
+endfunc Derived::sum
+func main$0:
+var d : Derived
+param &d
+param 2
+param 5
+call Derived::Derived, 3 # construct d
+param &d
+t4 = call Derived::sum, 1
+return t4
+endfunc main$0

@@ -1,0 +1,26 @@
+# Three-address intermediate representation
+func main$0:
+var x : int
+x = 2
+var y : int
+y = 0
+if x == 1 goto case_2
+if x == 2 goto case_3
+if x == 3 goto case_4
+goto case_5
+case_2:
+y = 10
+goto switch_end_1
+case_3:
+y = 20
+y = y + 1
+goto switch_end_1
+case_4:
+y = 30
+goto switch_end_1
+case_5:
+t1 = -1
+y = t1
+switch_end_1:
+return y
+endfunc main$0

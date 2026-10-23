@@ -1,0 +1,46 @@
+# Three-address intermediate representation
+func main$0:
+var a : int
+a = 4
+var b : int
+b = 9
+var c : int
+t2 = a < b
+if t2 goto ternary_true_1
+goto ternary_false_2
+ternary_true_1:
+t4 = b > 5
+if t4 goto ternary_true_4
+goto ternary_false_5
+ternary_true_4:
+t3 = b
+goto ternary_end_6
+ternary_false_5:
+t3 = a
+ternary_end_6:
+t1 = t3
+goto ternary_end_3
+ternary_false_2:
+t1 = 0
+ternary_end_3:
+c = t1
+t6 = a == 0
+t5 = !t6
+if t5 goto if_true_7
+goto or_rhs_10
+or_rhs_10:
+t7 = b <= 10
+if t7 goto and_rhs_11
+goto if_false_8
+and_rhs_11:
+t8 = c != 0
+if t8 goto if_true_7
+goto if_false_8
+if_true_7:
+return c
+goto if_end_9
+if_false_8:
+if_end_9:
+t9 = -1
+return t9
+endfunc main$0

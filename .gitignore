@@ -1,0 +1,3 @@
+build/
+syntax_analyzer
+test/ir_output/

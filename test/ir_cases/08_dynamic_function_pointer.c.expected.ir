@@ -1,0 +1,35 @@
+# Three-address intermediate representation
+func add$2$int$int:
+param x : int
+param y : int
+t1 = x + y
+return t1
+endfunc add$2$int$int
+func apply$3$int*$int$int:
+param fn : int
+param x : int
+param y : int
+param x
+param y
+t2 = call fn, 2
+return t2
+endfunc apply$3$int*$int$int
+func main$0:
+var count : int
+count = 3
+var data : int*
+t3 = new int[count]
+data = t3
+data[0] = 4
+data[1] = 7
+var total : int
+param add
+t4 = data[0]
+param t4
+t5 = data[1]
+param t5
+t6 = call apply$3$int*$int$int, 3
+total = t6
+delete[] data
+return total
+endfunc main$0

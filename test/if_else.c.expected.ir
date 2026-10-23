@@ -1,0 +1,65 @@
+# Three-address intermediate representation
+func main$0:
+var x : int
+x = 1
+var y : int
+y = 0
+var z : int
+z = 0
+if x goto if_true_1
+goto if_false_2
+if_true_1:
+if y goto if_true_4
+goto if_false_5
+if_true_4:
+z = 1
+goto if_end_6
+if_false_5:
+z = 2
+if_end_6:
+goto if_end_3
+if_false_2:
+if_end_3:
+if x goto if_true_7
+goto if_false_8
+if_true_7:
+if y goto if_true_10
+goto if_false_11
+if_true_10:
+z = 1
+goto if_end_12
+if_false_11:
+if_end_12:
+goto if_end_9
+if_false_8:
+z = 3
+if_end_9:
+if x goto if_true_13
+goto if_false_14
+if_true_13:
+z = 1
+goto if_end_15
+if_false_14:
+if y goto if_true_16
+goto if_false_17
+if_true_16:
+z = 2
+goto if_end_18
+if_false_17:
+z = 3
+if_end_18:
+if_end_15:
+var iffy : int
+iffy = 1
+var elsewhere : int
+elsewhere = 2
+var ifelse : int
+ifelse = 3
+param "%d"
+t3 = z + iffy
+t2 = t3 + elsewhere
+t1 = t2 + ifelse
+param t1
+t4 = call printf, 2
+return 0
+endfunc main$0

@@ -1,0 +1,10 @@
+# Three-address intermediate representation
+func main:
+var x : int
+x = 0
+goto work
+x = 99
+work:
+x = x + 7
+return x
+endfunc main

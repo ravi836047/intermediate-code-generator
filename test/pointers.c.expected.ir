@@ -1,0 +1,39 @@
+# Three-address intermediate representation
+func main$0:
+var a : int
+a = 6
+var b : int
+b = 2
+var c : int
+t1 = a * b
+c = t1
+var p : int*
+t2 = &a
+p = t2
+var d : int
+t3 = *p
+d = t3
+var pp : int**
+t4 = &p
+pp = t4
+var e : int
+t6 = *pp
+t5 = *t6
+e = t5
+a = a * b
+t8 = *p
+t9 = *p
+t7 = t9 * t8
+*p = t7
+var f : int
+t11 = *p
+t10 = a * t11
+f = t10
+param "%d"
+t14 = c + d
+t13 = t14 + e
+t12 = t13 + f
+param t12
+t15 = call printf, 2
+return 0
+endfunc main$0

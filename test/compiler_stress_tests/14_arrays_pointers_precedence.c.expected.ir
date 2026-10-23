@@ -1,0 +1,17 @@
+# Three-address intermediate representation
+func main$0:
+var a : int[]
+a[0] = 10
+a[1] = 20
+a[2] = 30
+var p : int*
+p = a
+t1 = p + 1
+t3 = a[2]
+t4 = a[0]
+t2 = t4 + t3
+*t1 = t2
+t6 = p + 1
+t5 = *t6
+return t5
+endfunc main$0

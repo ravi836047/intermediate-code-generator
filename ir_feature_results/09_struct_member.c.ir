@@ -1,0 +1,11 @@
+# Three-address intermediate representation
+# type P
+func main:
+var p : struct P
+p.x = 5
+p.y = 8
+t1 = p.y
+p.x = p.x + t1
+t2 = p.x
+return t2
+endfunc main

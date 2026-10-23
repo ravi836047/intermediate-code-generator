@@ -1,0 +1,22 @@
+# Three-address intermediate representation
+func fact:
+param n : int
+t1 = n <= 1
+if t1 goto if_true_1
+goto if_false_2
+if_true_1:
+return 1
+goto if_end_3
+if_false_2:
+if_end_3:
+t3 = n - 1
+param t3
+t4 = call fact, 1
+t2 = n * t4
+return t2
+endfunc fact
+func main:
+param 5
+t5 = call fact, 1
+return t5
+endfunc main

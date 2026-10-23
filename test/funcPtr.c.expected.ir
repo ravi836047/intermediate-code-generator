@@ -1,0 +1,40 @@
+# Three-address intermediate representation
+func add$2$int$int:
+param a : int
+param b : int
+t1 = a + b
+return t1
+endfunc add$2$int$int
+func mul$2$int$int:
+param a : int
+param b : int
+t2 = a * b
+return t2
+endfunc mul$2$int$int
+func apply$3$int*$int$int:
+param f : int
+param x : int
+param y : int
+param x
+param y
+t3 = call f, 2
+return t3
+endfunc apply$3$int*$int$int
+func main$0:
+var r1 : int
+param add
+param 2
+param 3
+t4 = call apply$3$int*$int$int, 3
+r1 = t4
+var r2 : int
+param mul
+param 2
+param 3
+t5 = call apply$3$int*$int$int, 3
+r2 = t5
+param "%d\n"
+t6 = r1 + r2
+param t6
+t7 = call printf, 2
+endfunc main$0

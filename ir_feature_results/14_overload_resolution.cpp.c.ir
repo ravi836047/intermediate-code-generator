@@ -1,0 +1,22 @@
+# Three-address intermediate representation
+func f:
+param x : int
+t1 = x + 2
+return t1
+endfunc f
+func f:
+param x : int
+param y : int
+t3 = x * 10
+t2 = t3 + y
+return t2
+endfunc f
+func main:
+param 4
+param 5
+t5 = call f, 2
+param 3
+t6 = call f, 1
+t4 = t6 + t5
+return t4
+endfunc main

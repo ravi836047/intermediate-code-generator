@@ -1,0 +1,22 @@
+# Three-address intermediate representation
+func main$0:
+var n : int
+n = 3
+var sum : int
+sum = 0
+start:
+t1 = n <= 0
+if t1 goto if_true_1
+goto if_false_2
+if_true_1:
+goto done
+goto if_end_3
+if_false_2:
+if_end_3:
+sum = sum + n
+t2 = n
+n = n - 1
+goto start
+done:
+return sum
+endfunc main$0

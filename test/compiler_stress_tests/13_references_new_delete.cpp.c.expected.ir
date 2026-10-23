@@ -1,0 +1,19 @@
+# Three-address intermediate representation
+func main$0:
+var x : int
+x = 5
+var r : int&
+alias r -> x
+t1 = x + 2
+x = t1
+var p : int*
+param 9
+t2 = new int
+p = t2
+var value : int
+t3 = *p
+value = t3
+delete p
+t4 = x + value
+return t4
+endfunc main$0

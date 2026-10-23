@@ -1,0 +1,27 @@
+# Three-address intermediate representation
+func main$0:
+var matrix : int[]
+matrix[0][0] = 1
+matrix[0][1] = 2
+matrix[0][2] = 3
+matrix[1][0] = 4
+matrix[1][1] = 5
+matrix[1][2] = 6
+var word : char[]
+word = "ok"
+var row : int*
+t1 = matrix[1]
+row = t1
+var alias : int**
+t2 = &row
+alias = t2
+t5 = *alias
+t4 = *t5
+t6 = *row
+t3 = t6 + t4
+matrix[0][2] = t3
+t8 = word[0]
+t9 = matrix[0][2]
+t7 = t9 + t8
+return t7
+endfunc main$0

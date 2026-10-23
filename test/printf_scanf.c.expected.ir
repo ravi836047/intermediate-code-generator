@@ -1,0 +1,32 @@
+# Three-address intermediate representation
+func main$0:
+var x : int
+x = 0
+var buf : char[]
+param "%d\n"
+param 1
+t1 = call printf, 2
+param "%s %c %5.2f %%\n"
+param "s"
+param 'c'
+param 1.5
+t2 = call printf, 4
+param "tab\there\nnewline\n"
+t3 = call printf, 1
+param "brace { and } and /* and */ and \" \n"
+t4 = call printf, 1
+param ""
+t5 = call printf, 1
+param "%d"
+t6 = &x
+param t6
+t7 = call scanf, 2
+param "%31s"
+param buf
+t8 = call scanf, 2
+param "%d %s\n"
+param x
+param buf
+t9 = call printf, 3
+return 0
+endfunc main$0
