@@ -1,0 +1,54 @@
+# Three-address intermediate representation
+func main$0:
+var a : int
+a = 10
+var b : int
+b = 5
+var c : int
+c = 2
+var p : int*
+t1 = &a
+p = t1
+var val : int
+t5 = &p
+t4 = *t5
+t3 = *t4
+t2 = a * t3
+val = t2
+var x : int
+t7 = a
+a = a - 1
+t6 = t7 - b
+x = t6
+var y : int
+t9 = a > b
+if t9 goto ternary_true_1
+goto ternary_false_2
+ternary_true_1:
+t11 = b > c
+if t11 goto ternary_true_4
+goto ternary_false_5
+ternary_true_4:
+t10 = b
+goto ternary_end_6
+ternary_false_5:
+t10 = c
+ternary_end_6:
+t8 = t10
+goto ternary_end_3
+ternary_false_2:
+if val goto ternary_true_7
+goto ternary_false_8
+ternary_true_7:
+t12 = a
+goto ternary_end_9
+ternary_false_8:
+t12 = b
+ternary_end_9:
+t8 = t12
+ternary_end_3:
+y = t8
+var str : char[]
+str = "this is ""a string"" with \"escapes\" and /* no comments */"
+return y
+endfunc main$0

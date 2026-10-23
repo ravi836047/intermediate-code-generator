@@ -1,0 +1,17 @@
+# Three-address intermediate representation
+func main$0:
+var d_ptr : int*
+t1 = new int
+d_ptr = t1
+*d_ptr = 42
+var val : int
+t2 = *d_ptr
+val = t2
+delete d_ptr
+var d_arr : int*
+t3 = new int[5]
+d_arr = t3
+d_arr[0] = 100
+delete[] d_arr
+return 0
+endfunc main$0

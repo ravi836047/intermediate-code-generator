@@ -1,0 +1,54 @@
+# Three-address intermediate representation
+global counter : int
+counter = 0
+func increment$0:
+t1 = counter + 1
+counter = t1
+return counter
+endfunc increment$0
+func main$0:
+var a : bool
+a = false
+var b : bool
+b = true
+if a goto and_rhs_4
+goto if_false_2
+and_rhs_4:
+t3 = call increment$0, 0
+t2 = t3 > 0
+if t2 goto if_true_1
+goto if_false_2
+if_true_1:
+counter = 100
+goto if_end_3
+if_false_2:
+if_end_3:
+if b goto if_true_5
+goto or_rhs_8
+or_rhs_8:
+t5 = call increment$0, 0
+t4 = t5 > 0
+if t4 goto if_true_5
+goto if_false_6
+if_true_5:
+t6 = counter + 10
+counter = t6
+goto if_end_7
+if_false_6:
+if_end_7:
+t7 = !a
+if t7 goto and_rhs_12
+goto if_false_10
+and_rhs_12:
+t9 = call increment$0, 0
+t8 = t9 > 0
+if t8 goto if_true_9
+goto if_false_10
+if_true_9:
+t10 = counter + 1000
+counter = t10
+goto if_end_11
+if_false_10:
+if_end_11:
+return counter
+endfunc main$0

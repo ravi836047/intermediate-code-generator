@@ -1,0 +1,58 @@
+# Three-address intermediate representation
+type Node
+field data : int
+field next : Node*
+func Node::init:
+param this : Node*
+param v : int
+data = v
+next = 0
+endfunc Node::init
+func main$0:
+var head : Node*
+t1 = new Node
+head = t1
+param head
+param 1
+t2 = call Node::init, 2
+var current : Node*
+current = head
+var i : int
+i = 2
+for_test_1:
+t3 = i <= 5
+if t3 goto for_body_2
+goto for_end_4
+for_body_2:
+t4 = new Node
+current->next = t4
+t5 = current->next
+current = t5
+param current
+param i
+t6 = call Node::init, 2
+for_step_3:
+t7 = i + 1
+i = t7
+goto for_test_1
+for_end_4:
+var sum : int
+sum = 0
+current = head
+while_test_5:
+t8 = current != 0
+if t8 goto while_body_6
+goto while_end_7
+while_body_6:
+t10 = current->data
+t9 = sum + t10
+sum = t9
+var temp : Node*
+temp = current
+t11 = current->next
+current = t11
+delete temp
+goto while_test_5
+while_end_7:
+return sum
+endfunc main$0

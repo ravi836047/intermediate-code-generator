@@ -1,0 +1,33 @@
+# Three-address intermediate representation
+global global_var : int
+global_var = 100
+func main$0:
+var x : int
+x = 1
+t1 = global_var == 100
+if t1 goto if_true_1
+goto if_false_2
+if_true_1:
+var x : int
+x = 2
+var i : int
+i = 0
+for_test_4:
+t2 = i < 5
+if t2 goto for_body_5
+goto for_end_7
+for_body_5:
+var x : int
+x = 3
+t3 = global_var + x
+global_var = t3
+for_step_6:
+t4 = i + 1
+i = t4
+goto for_test_4
+for_end_7:
+goto if_end_3
+if_false_2:
+if_end_3:
+return x
+endfunc main$0

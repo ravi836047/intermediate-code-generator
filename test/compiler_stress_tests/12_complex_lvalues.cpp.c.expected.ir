@@ -1,0 +1,31 @@
+# Three-address intermediate representation
+type Point
+field x : int
+field y : int
+type Polygon
+field vertices : Point[]
+func main$0:
+var poly : Polygon
+var i : int
+i = 0
+for_test_1:
+t1 = i < 10
+if t1 goto for_body_2
+goto for_end_4
+for_body_2:
+t2 = i * 2
+poly.vertices[i].x = t2
+t3 = i * 3
+poly.vertices[i].y = t3
+for_step_3:
+t4 = i + 1
+i = t4
+goto for_test_1
+for_end_4:
+var result : int
+t6 = poly.vertices[4].y
+t7 = poly.vertices[4].x
+t5 = t7 + t6
+result = t5
+return result
+endfunc main$0

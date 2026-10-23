@@ -1,0 +1,29 @@
+# Three-address intermediate representation
+type Calculator
+field memory : int
+func Calculator::setMemory:
+param this : Calculator*
+param val : int
+memory = val
+endfunc Calculator::setMemory
+func Calculator::add:
+param this : Calculator*
+param a : int
+param b : int
+t2 = a + b
+t1 = t2 + memory
+return t1
+endfunc Calculator::add
+func main$0:
+var calc : Calculator
+param &calc
+param 10
+t3 = call Calculator::setMemory, 2
+var total : int
+param &calc
+param 5
+param 5
+t4 = call Calculator::add, 3
+total = t4
+return 0
+endfunc main$0

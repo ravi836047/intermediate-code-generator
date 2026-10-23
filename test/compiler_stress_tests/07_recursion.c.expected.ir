@@ -1,0 +1,24 @@
+# Three-address intermediate representation
+func factorial$1$int:
+param n : int
+t1 = n <= 1
+if t1 goto if_true_1
+goto if_false_2
+if_true_1:
+return 1
+goto if_end_3
+if_false_2:
+if_end_3:
+t3 = n - 1
+param t3
+t4 = call factorial$1$int, 1
+t2 = n * t4
+return t2
+endfunc factorial$1$int
+func main$0:
+var result : int
+param 5
+t5 = call factorial$1$int, 1
+result = t5
+return 0
+endfunc main$0
